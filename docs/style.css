@@ -1,0 +1,66 @@
+/*/////////////////////////////////////////////////
+//LINE風チャット画面
+/////////////////////////////////////////////////*/
+/* https://3owebcreate.com/web/coding/chat_line_css */
+.line__container {
+    padding:0;
+    background: #7494c0;
+    overflow: hidden;
+    max-width: 50%;
+    height: 700px;
+    margin: 20px auto;
+    font-size: 80%;
+}
+
+
+/* タイトル部分 */
+.line__container .line__title {
+    background: #273246;
+    padding: 10px;
+    text-align: center;
+    font-size: 150%;
+    color: #ffffff;
+}
+
+/* 会話部分 */
+.line__container .line__contents {
+    padding: 10px;
+    overflow: hidden;
+    line-height: 135%;
+}
+
+/* 相手の会話 */
+.line__container .line__left {
+    width: 100%;
+    position: relative;
+    display: block;
+    margin-bottom: 5px;
+    max-width: 50%;
+    clear: both;
+    color: #ffffff;
+}
+
+/* コメントエリア */
+.line__container .line__left .text {
+    margin-left: 50px;
+    margin: 0;
+    position: relative;
+    padding: 10px;
+    border-radius: 20px;
+    color: #000;
+    background-color: #ffffff;
+}
+
+/* 吹き出し */
+.line__container .line__left .text::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: -10px;
+    top: 10px;
+    border-right: 20px solid #ffffff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
