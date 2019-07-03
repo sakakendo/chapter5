@@ -21,16 +21,28 @@
                 <ul id="messages"></ul>
             </div>
             <input id="name" placeholder="名前">
+            <!--button id="send"> submit name</button-->
             <!-- TODO1 ここにメッセージ入力フォームを追加 -->
             <!-- TODO1 ここに送信ボタンを追加 -->
-            
+            <input id="message" placeholder="メッセージ">
+            <button id="send"> submit message</button>
+           
         </div>
         <script>
             // TODO0 ここに設定情報を貼り付ける  
 
-            
-            
-            
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyB_TrwurAE-c9BhmxjXBOmXFu699LssFxw",
+                authDomain: "chapter5-c441d.firebaseapp.com",
+                databaseURL: "https://chapter5-c441d.firebaseio.com",
+                projectId: "chapter5-c441d",
+                storageBucket: "",
+                messagingSenderId: "650182952445",
+                appId: "1:650182952445:web:1aef41c8ce6a888e"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
             // データベースの参照を準備
             var messagesRef = firebase.firestore().collection('messages')
         
@@ -38,7 +50,18 @@
             
 
             // TODO2 送信ボタンが押された時の処理
-            
+            $('#send').click(function(){
+            /*
+                $('<p>追加しました</p>').appendTo('#messages');
+            */
+                messagesRef.add({
+                    name: $('#name').val(),
+                    body: $('#message').val()
+                });
+
+            });
+
+                        
         </script>
     </body>
 </html>
